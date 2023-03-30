@@ -1,6 +1,9 @@
 <template>
   <div class="block-c-action">
-    <c-action-2 />
+    <c-action-2
+      @increment = "$emit('increment')"
+
+    />
 
   </div>
 </template>
@@ -15,6 +18,7 @@ import CAction2 from './CAction2'
     components: {
       CAction2
     }
+    
     
   }
 </script>

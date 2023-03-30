@@ -1,7 +1,8 @@
 <template>
   <div class="block-c-action">
-    <button 
+    <button
       @click="$emit('increment')"
+      
       class="button"
     >
       Click counter
@@ -11,18 +12,9 @@
 
 <script>
   export default {
-    name: 'CAction2',
-    
-    
+    name: 'CAction2',    
 
-    methods: {
-      increment() {
-        // console.log(increment) // не работает почему? 
-        this.counter = counter++  
-        this.$emit('increment')
-              
-      }      
-    },
+    
 
   }
 

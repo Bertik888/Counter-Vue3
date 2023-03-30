@@ -10,7 +10,9 @@
       </div>         
 
       <div class="col">
-        <c-action-1 />
+        <c-action-1 
+          @increment = "increment"
+        />
       </div>
       
     </div>   
@@ -36,7 +38,14 @@ export default {
     return {
       counter: 0
     }
-  }
+  },
+
+  methods: {
+    increment() {
+      console.log('increment') // не работает почему? 
+      this.counter++  
+    }      
+  },
 }
 </script>
 
