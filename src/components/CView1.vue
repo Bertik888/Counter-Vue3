@@ -1,8 +1,9 @@
 <template>
-  <div class="block-c-view">
-    <c-view-2 
-      :counter="counter"
-    />
+  <div class="block-wrapper">
+      <c-view-2 
+        :counter="counter"
+        
+      />
   </div>
 
 </template>
@@ -28,10 +29,6 @@ import CView2 from './CView2'
 </script>
 
 <style lang="scss">
-.block-c-view {
-  border: solid 2px #000;
-  padding: 25px;
-  border-radius: 3px;
-}
+
 
 </style>

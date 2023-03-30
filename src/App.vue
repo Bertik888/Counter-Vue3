@@ -13,13 +13,9 @@
         <c-action-1 
           @increment = "increment"
         />
-      </div>
-      
+      </div>      
     </div>   
-
   </div>
-  
-
 </template>
 
 <script>
@@ -61,6 +57,7 @@ export default {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 40px;
+  box-sizing: border-box;
 }
 
 .row {
@@ -70,6 +67,12 @@ export default {
 
 .col {
   padding: 25px;
+}
+
+.block-wrapper {
+  border: solid 2px #000;
+  padding: 25px;
+  border-radius: 3px;
 }
 
 </style>
