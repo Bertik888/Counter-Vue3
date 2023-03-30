@@ -6,12 +6,14 @@
       <div class="col">
         <c-view-1 
           :counter="counter"
+          @resetCounter="resetCounter"
         />
       </div>         
 
       <div class="col">
         <c-action-1 
-          @increment = "increment"
+          @increment="increment"
+          :reset_counter="reset_counter"
         />
       </div>      
     </div>   
@@ -32,15 +34,27 @@ export default {
 
   data() {
     return {
-      counter: 0
+      counter: 0,
+      reset_counter: 0 //так можно описать или лучше CamelCase?
     }
   },
 
   methods: {
     increment() {
-      console.log('increment') // не работает почему? 
+      console.log('increment') // не работает почему? [X] - есть ответ
       this.counter++  
-    }      
+    },
+    
+    resetCounter() {
+      console.log(resetCounter)
+      if (resetCounter > 0) {
+        this.counter = 0
+        this.reset_counter++
+      } else {
+        console.log('Error:')
+      }
+
+    }
   },
 }
 </script>

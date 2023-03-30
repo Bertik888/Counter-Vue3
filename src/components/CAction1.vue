@@ -2,6 +2,8 @@
   <div class="block-wrapper">
     <c-action-2
       @increment = "$emit('increment')"
+      :reset_counter = "reset_counter"
+
 
     />
 
@@ -17,6 +19,13 @@ import CAction2 from './CAction2'
 
     components: {
       CAction2
+    },
+
+    props: {
+      reset_counter: {
+        type: Number,
+        default: 0
+      }
     }
     
     

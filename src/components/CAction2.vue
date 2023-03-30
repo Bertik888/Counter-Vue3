@@ -3,7 +3,7 @@
     <div class="c-action-2">
 
       <div class="reset">
-        reset_counter: 0 
+        reset_counter: {{ reset_counter }} 
       </div>
 
       <div class="btn">
@@ -24,6 +24,13 @@
 <script>
   export default {
     name: 'CAction2',    
+
+    props: {
+      reset_counter: {
+        type: Number,
+        default: 0
+      }
+    },
 
     
 

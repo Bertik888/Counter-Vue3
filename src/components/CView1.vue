@@ -2,6 +2,7 @@
   <div class="block-wrapper">
       <c-view-2 
         :counter="counter"
+        @resetCounter ="$emit('resetCounter')"
         
       />
   </div>

@@ -3,12 +3,12 @@
     <div class="c-view-2">
 
       <div class="counter">
-        {{ counter }}
+        counter: {{ counter }}
       </div>
       
       <div class="btn">
         <button
-          @click="$emit('increment')"
+          @click="$emit('resetCounter')"
           
           class="button"
         >
