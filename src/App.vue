@@ -72,18 +72,12 @@ export default {
       }      
     },
 
-    changeCounter() {
-      /* if (this.counter !== 0 && this.inputValue > 0) {
-        this.counter++
-      } */
-    },
+    changeCounter(value) {
+      this.counter = value
+    }
   }
-
+  
 }
-
-      /* else {
-        console.log('error_valid', val, this.max_count)
-      } */
 </script>
 
 <style lang="scss">

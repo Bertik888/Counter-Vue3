@@ -15,7 +15,7 @@
         
       <div class="btn">
         <button
-          @click="$emit('changeCounter')"          
+          @click="onChangeCounter"          
           class="button"
         >
           change counter
@@ -43,24 +43,18 @@
       return {
         inputValue: 0
       }
+      
     },
 
     methods: {
-      changeCounter() {
-        
-        this.$emit.inputValue
-        // this.inputValue = 0
-
-        if (this.counter !== 0) {
-          this.counter++
-          } else {
-            console.log('error_valid', val, this.max_count)
+      onChangeCounter() {
+        if (this.inputValue <= this.max_count) { 
+          this.$emit('ChangeCounter', this.inputValue)
+          this.inputValue = 0
+        } else {
+          console.log(`error_valid: число ${this.inputValue}, больше максимально допустимого ${this.max_count}`)
         }
-
-        console.log(inputValue)
-
-        console.log('changeCounter')
-      }
+      }      
     }
   }
 </script>
