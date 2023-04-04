@@ -22,7 +22,12 @@
           @increment="increment"
           :reset_counter="reset_counter"
         />
-      </div>      
+      </div>  
+
+      <div class="col">
+        <c-color />
+      </div>
+
     </div>   
   </div>
 </template>
@@ -31,6 +36,8 @@
 import CView1 from './components/CView1.vue'
 import CAction1 from './components/CAction1.vue'
 import CModel from './components/CModel.vue'
+import CColor from './components/CColor.vue'
+
 
 
 
@@ -39,14 +46,16 @@ export default {
   components: {
     CView1,
     CAction1,
-    CModel
+    CModel,
+    CColor
   },
 
   data() {
     return {
       counter: 0,
-      reset_counter: 0, //так можно описать или лучше CamelCase?
-      max_count: 10 
+      reset_counter: 0, //так можно описать или лучше CamelCase? нельзя через -
+      max_count: 10,
+
     }
   },
 
@@ -74,9 +83,13 @@ export default {
 
     changeCounter(value) {
       this.counter = value
-    }
-  }
+      console.log(value)
+    },
+    
+  },
+
   
+
 }
 </script>
 
@@ -109,5 +122,6 @@ export default {
   padding: 25px;
   border-radius: 3px;
 }
+
 
 </style>

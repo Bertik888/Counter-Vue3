@@ -5,13 +5,14 @@
       <div class="my-input">     
         input counter:    
         <input 
-          v-model="inputValue" 
-          
+          v-model="inputValue"           
           type="number"
           class="input"        
         >
       </div>
       <!-- :max_count="max_count" нужен ли тут пропс в инпуте? - [x] - ответ, нет не нужен-->
+
+      <!-- В КАКОМ СЛУЧАЕ НАДО ПРОПИСЫВАТЬ ЭМИТЫ, ПЕРЕД ДАТОЙ ? -->
         
       <div class="btn">
         <button
@@ -42,17 +43,19 @@
     data() {
       return {
         inputValue: 0
-      }
-      
+      }      
     },
 
     methods: {
       onChangeCounter() {
-        if (this.inputValue <= this.max_count) { 
+        if (this.inputValue <= this.max_count && this.inputValue !== 0) { 
           this.$emit('ChangeCounter', this.inputValue)
           this.inputValue = 0
+          console.log('onChangeCounter')
         } else {
           console.log(`error_valid: число ${this.inputValue}, больше максимально допустимого ${this.max_count}`)
+          this.inputValue = 0
+          
         }
       }      
     }
@@ -69,12 +72,14 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  text-align: center;
 }
 
 .input {
   border: 0;
   outline: 0;
   background: 0;
+  border-bottom: 1px solid black;
 }
 
   input[type="number"]::-webkit-outer-spin-button,
