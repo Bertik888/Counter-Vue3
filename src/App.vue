@@ -4,6 +4,16 @@
     <div class="row">
 
       <div class="col">
+        <c-registration                  
+        />
+      </div>
+
+      <div class="col">
+        <v-model                  
+        />
+      </div>
+
+      <div class="col">
         <c-model 
           @changeCounter="changeCounter"
           :max_count="max_count"          
@@ -33,6 +43,9 @@
 </template>
 
 <script>
+import CRegistration from './components/CRegistration.vue'
+import VModel from './components/VModel.vue'
+
 import CView1 from './components/CView1.vue'
 import CAction1 from './components/CAction1.vue'
 import CModel from './components/CModel.vue'
@@ -44,16 +57,18 @@ import CColor from './components/CColor.vue'
 export default {
   name: 'App',
   components: {
-    CView1,
-    CAction1,
+    CRegistration,
+    VModel,
     CModel,
+    CView1,
+    CAction1,           
     CColor
   },
 
   data() {
     return {
       counter: 0,
-      reset_counter: 0, //так можно описать или лучше CamelCase? нельзя через -
+      reset_counter: 0, //так можно или лучше CamelCase? нельзя через '-'
       max_count: 10,
 
     }
@@ -94,6 +109,10 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  box-sizing: border-box; // из-за этого result выходил за рамки c-registration
+}
+
 #app {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -105,7 +124,6 @@ export default {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 40px;
-  box-sizing: border-box;
 }
 
 .row {
@@ -122,6 +140,21 @@ export default {
   padding: 25px;
   border-radius: 3px;
 }
+
+.input-wrapper {
+  border: 0;
+  outline: 0;
+  background: 0;
+  border-bottom: 1px solid black;
+}
+
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }  
+
 
 
 </style>

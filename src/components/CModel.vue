@@ -7,12 +7,12 @@
         <input 
           v-model="inputValue"           
           type="number"
-          class="input"        
+          class="input-wrapper"        
         >
       </div>
       <!-- :max_count="max_count" нужен ли тут пропс в инпуте? - [x] - ответ, нет не нужен-->
 
-      <!-- В КАКОМ СЛУЧАЕ НАДО ПРОПИСЫВАТЬ ЭМИТЫ, ПЕРЕД ДАТОЙ ? -->
+      <!-- В КАКОМ СЛУЧАЕ НАДО ПРОПИСЫВАТЬ ЭМИТЫ, ПЕРЕД ДАТОЙ ? - [x] - для того, чтобы подсвечивались при выборе после : -->
         
       <div class="btn">
         <button
@@ -66,7 +66,7 @@
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 .c-model {
   display: flex;
   justify-content: space-between;
@@ -75,18 +75,18 @@
   text-align: center;
 }
 
-.input {
-  border: 0;
-  outline: 0;
-  background: 0;
-  border-bottom: 1px solid black;
-}
+// .input {
+//   border: 0;
+//   outline: 0;
+//   background: 0;
+//   border-bottom: 1px solid black;
+// }
 
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+//   input[type="number"]::-webkit-outer-spin-button,
+//   input[type="number"]::-webkit-inner-spin-button {
+//     -webkit-appearance: none;
+//     margin: 0;
+//   }
 
 
 </style>

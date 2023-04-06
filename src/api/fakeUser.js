@@ -1,4 +1,4 @@
-const createUser = (data) =>
+export const createUser = (data) =>
   new Promise((resolve, reject) => {
     if (!data) {
       reject(new Error('Not all information provided'))

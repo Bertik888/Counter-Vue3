@@ -46,7 +46,7 @@
         this.colorNumber = (Math.floor(Math.random() * 200) + 1)
         this.show = !this.show
 
-        // this.$emit('backgroundColor', this.colorNumber)
+        // this.$emit('backgroundColor', this.colorNumber) - не нужен тут
         console.log(this.colorNumber)        
         console.log('onChangeColor')        
       }
@@ -61,7 +61,7 @@
         } else {
           return 'yellow'
         }
-        // return (this.colorNumber >= 0 && this.colorNumber < 100 ) ? 'red' : 'green'
+        // return (this.colorNumber >= 0 && this.colorNumber < 100 ) ? 'red' : 'green' // краткая запись 2-х верхних цветов кр и зел
       }
 
     }
