@@ -21,7 +21,7 @@
           class="input-wrapper"        
         >
       </div>
-      <!-- type="login" - существует такой тип? и тип майл?
+      <!-- type="login" - существует такой тип? - нет; тип майл? - да
           :value = как используется? когда v-model, а когда :value ?  -->
       <div class="my-input">     
         <input        
@@ -57,6 +57,7 @@
 
 <script>
 import {createUser} from '@/api/fakeUser'
+
   export default {
     name: 'CRegistrationForm',
     
@@ -68,7 +69,6 @@ import {createUser} from '@/api/fakeUser'
         inputEmailForm: '',
         inputPasswordForm: ''
       }
-
     },
 
     methods: {
@@ -78,12 +78,17 @@ import {createUser} from '@/api/fakeUser'
           login: this.inputLoginForm,
           email: this.inputEmailForm,
           password: this.inputPasswordForm
-
         }
+
         createUser(data).then(response => {
-          if(response.data.status === 400) {
-            console.log(data)
+          if (response.data.status === 400) {
+            this.$emit('response_400', response.data)
           }
+
+          if (response.data.status === 200) {
+            this.$emit('response_200', response.data)
+          }
+          console.log(response.data)
           console.log(response)
         })
 
@@ -93,9 +98,9 @@ import {createUser} from '@/api/fakeUser'
           inputEmailForm: this.inputEmailForm,
           inputPasswordForm: this.inputPasswordForm
         }
-        this.$emit('sendForm', formData)
-        this.resetForm()
-        console.log('onChangeForm')
+          this.$emit('sendForm', formData)
+          this.resetForm()
+          console.log('onChangeForm')
       },
 
       resetForm() {

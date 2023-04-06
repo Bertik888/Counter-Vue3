@@ -2,6 +2,7 @@
   <div class="block-wrapper block-height">
     <div class="c-registration-res">
       <pre>result: {{ result }}</pre>
+      <pre>result_2: {{ result_2 }}</pre>
     </div>
     
   </div>
@@ -15,7 +16,14 @@
       result: {
         type: Object,
         default: undefined
-      }
+      },
+
+      result_2: {
+        type: Array,
+        default: []
+      },
+      
+
     }
   }
 </script>

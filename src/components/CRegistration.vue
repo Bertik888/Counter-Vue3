@@ -5,14 +5,16 @@
       
       <div class="c-registration__input">      
         <c-registration-form 
-          @sendForm="sendForm"          
+          @sendForm="sendForm"     
+          @response_400="response_400"     
 
         />
       </div>
 
       <div class="c-registration__result">  
         <c-registration-result 
-          :result="result"          
+          :result="result"      
+          :result_2="result_2"    
         
         />
       </div>
@@ -36,14 +38,20 @@ import CRegistrationResult from './CRegistrationResult.vue'
 
     data() {
       return {
-        result: undefined
+        result: undefined,
+        result_2: []
       }
     },
 
     methods: {
       sendForm(formData) {
         this.result = formData
-        console.log(formData)
+        // console.log(formData)
+      },
+
+      response_400(dataValid) {
+        this.result_2 = dataValid
+        console.log(dataValid)
       }
     }
     
