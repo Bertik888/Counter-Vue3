@@ -5,7 +5,6 @@
       <div class="my-input">   
         <input
           v-model="inputNameForm"
-          @sendForm="sendForm"
           
           placeholder="input name:"           
           type="text"

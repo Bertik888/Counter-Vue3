@@ -38,6 +38,10 @@
         <c-color />
       </div>
 
+      <div class="col">
+        <c-background />
+      </div>
+
     </div>   
   </div>
 </template>
@@ -50,6 +54,8 @@ import CView1 from './components/CView1.vue'
 import CAction1 from './components/CAction1.vue'
 import CModel from './components/CModel.vue'
 import CColor from './components/CColor.vue'
+import CBackground from './components/CBackground.vue'
+
 
 
 
@@ -62,7 +68,8 @@ export default {
     CModel,
     CView1,
     CAction1,           
-    CColor
+    CColor,
+    CBackground
   },
 
   data() {
@@ -139,6 +146,10 @@ export default {
   border: solid 2px #000;
   padding: 25px;
   border-radius: 3px;
+}
+
+.block-height {
+  height: 100%;
 }
 
 .input-wrapper {
