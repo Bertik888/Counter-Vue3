@@ -1,7 +1,8 @@
 <template>
-  <div class="block-wrapper block-height">
+  <div 
+    :style="{ backgroundColor: selected_color }"
+    class="block-wrapper block-height">
     <div 
-      :style="{ backgroundColor: selected_color }"
       class="c-background-color"
     >
       Selected Color 
@@ -24,5 +25,8 @@
 </script>
 
 <style lang="scss" scoped>
+.c-background-color {
+  color: burlywood;
+}
 
 </style>

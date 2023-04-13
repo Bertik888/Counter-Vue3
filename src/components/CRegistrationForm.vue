@@ -82,6 +82,7 @@ import {createUser} from '@/api/fakeUser'
         createUser(data).then(response => {
           if (response.data.status === 400) {
             this.$emit('response_400', response.data)
+            console.log(response.data)
           }
 
           if (response.data.status === 200) {

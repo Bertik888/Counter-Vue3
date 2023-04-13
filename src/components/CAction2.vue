@@ -62,6 +62,7 @@
   color: #fff;
   text-transform: uppercase;
 
+
   // width: 220px;
   padding: 10px 30px;
   border-radius: 20px;  

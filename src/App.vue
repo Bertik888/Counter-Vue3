@@ -4,6 +4,11 @@
     <div class="row">
 
       <div class="col">
+        <c-elements                  
+        />
+      </div>
+
+      <div class="col">
         <c-registration                  
         />
       </div>
@@ -21,7 +26,7 @@
       </div>
 
       <div class="col">
-        <c-view-1 
+        <c-view-1 npm run 
           :counter="counter"
           @resetCounter="resetCounter"
         />
@@ -47,6 +52,7 @@
 </template>
 
 <script>
+import CElements from './components/CElements.vue'
 import CRegistration from './components/CRegistration.vue'
 import VModel from './components/VModel.vue'
 
@@ -63,6 +69,7 @@ import CBackground from './components/CBackground.vue'
 export default {
   name: 'App',
   components: {
+    CElements,
     CRegistration,
     VModel,
     CModel,

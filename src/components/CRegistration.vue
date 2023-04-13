@@ -39,7 +39,7 @@ import CRegistrationResult from './CRegistrationResult.vue'
     data() {
       return {
         result: undefined,
-        result_2: []
+        result_2: {}
       }
     },
 
