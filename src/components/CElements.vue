@@ -4,15 +4,22 @@
 
       <div class="c-elements__items">
         <c-elements-list 
-        :listElements="listElements"
+          :listElements="listElements"
+
+          :filterValue="filterValue"
+
         
         />
       </div>
 
       <div class="c-elements__buttons">
         <c-elements-action  
-        @addElement="addElement"
-        @removeElement="removeElement"
+          @addElement="addElement"
+          @removeElement="removeElement"
+
+          @filterBlack="FilterBlack"
+          @filterRed="FilterRed"
+          @filterGreen="FilterGreen"
         
         />
       </div>
@@ -36,12 +43,9 @@ import CElementsAction from './CElementsAction.vue'
 
     data() {
       return {
-        listElements: []
-      }      
-    },
-
-    computed: {
-      
+        listElements: [],
+        filterValue: ''
+      }            
     },
 
     methods: {
@@ -51,9 +55,21 @@ import CElementsAction from './CElementsAction.vue'
         }        
         this.listElements.push({id: idRandom()})
         console.log(idRandom())
+        console.log(this.listElements)
+
       },
       removeElement() { 
         this.listElements.splice(0, 1)
+      },
+      
+      FilterBlack() {
+        this.filterValue = 'black'
+      },
+      FilterRed() {
+        this.filterValue = 'red'
+      },
+      FilterGreen() {
+        this.filterValue = 'green'
       }
     }
     

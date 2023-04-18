@@ -3,22 +3,49 @@
     <div class="c-elements-action">
 
       <div class="btn">
-      <button        
+        <button        
         @click="onAddElement"
-        class="button"
-      >
-        add element
-      </button>
-    </div>
+          class="button"
+        >
+          add element
+        </button>
+      </div>
 
-    <div class="btn">
-      <button        
-        @click="onRemoveElement"        
-        class="button"
-      >
-        remove element
-      </button>
-    </div>
+      <div class="btn">
+        <button        
+          @click="onRemoveElement"        
+          class="button"
+        >
+          remove element
+        </button>
+      </div>
+
+      <div class="btn">
+        <button            
+          @click="onFilterBlack"    
+          class="button"
+        >
+          filter black
+        </button>
+      </div>
+
+      <div class="btn">
+        <button          
+          @click="onFilterRed"   
+          class="button"
+        >
+          filter red
+        </button>
+      </div>
+
+      <div class="btn">
+        <button         
+          @click="onFilterGreen" 
+          class="button"
+        >
+          filter green
+        </button>
+      </div>
 
     </div>
 
@@ -39,8 +66,24 @@
       onRemoveElement() {
         this.$emit('removeElement')
         console.log('removeElement')
+      },
+      
+      onFilterBlack() {
+        this.$emit('FilterBlack')
+        console.log('FilterBlack')
 
-      }      
+      },
+
+      onFilterRed() {
+        this.$emit('FilterRed')
+        console.log('FilterRed')
+
+      },
+
+      onFilterGreen() {
+        this.$emit('FilterGreen')
+        console.log('FilterGreen')
+      }
     }
     
   }
